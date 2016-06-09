@@ -1,0 +1,45 @@
+{
+  "ProjectName": "Mayor 1.1",
+  "ProjectGuid": "ee0892ed-c271-41b7-bc1e-57dc7c4be097",
+  "projectVersion": 1,
+  "AppIdentifier": "com.telerik.Mayor11",
+  "DisplayName": "Mayor 1.1",
+  "Author": "",
+  "Description": "Mayor 1.1",
+  "BundleVersion": "1.0",
+  "AndroidVersionCode": "1",
+  "iOSDeviceFamily": [
+    "1",
+    "2"
+  ],
+  "iOSBackgroundMode": [],
+  "ProjectTypeGuids": "{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}",
+  "FrameworkVersion": "4.0.0",
+  "AndroidPermissions": [
+    "android.permission.INTERNET"
+  ],
+  "DeviceOrientations": [
+    "Portrait",
+    "Landscape"
+  ],
+  "AndroidHardwareAcceleration": "true",
+  "iOSStatusBarStyle": "Default",
+  "Framework": "Cordova",
+  "WP8TileTitle": "",
+  "WP8Publisher": "",
+  "WP8Capabilities": [
+    "ID_CAP_NETWORKING",
+    "ID_CAP_WEBBROWSERCOMPONENT"
+  ],
+  "WP8Requirements": [],
+  "WP8PublisherID": "{e71a11e4-b355-4ac1-88a5-bdc7e94f74e3}",
+  "WP8ProductID": "{388009a2-4277-44ee-834c-ce60eacf9c66}",
+  "WPSdk": "8.0",
+  "WP8PackageIdentityName": "1234Telerik.Mayor11",
+  "WP8WindowsPublisherName": "CN=Telerik",
+  "WP8SupportedResolutions": [
+    "ID_RESOLUTION_WVGA",
+    "ID_RESOLUTION_WXGA",
+    "ID_RESOLUTION_HD720P"
+  ]
+}
