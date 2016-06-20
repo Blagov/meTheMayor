@@ -478,10 +478,6 @@
   background-color: #ff2938;
   border-color: #ff2938;
 }
-/* Links */
-.km-nova .link {
-  color: #ff4350;
-}
 /*Switch fix*/
 .km-nova .km-switch-wrapper,
 .km-nova span.km-switch.km-switch-on input[type=checkbox]:checked + span + span {
@@ -524,7 +520,4 @@
 }
 .km-nova .km-filter-wrap:before {
   color: #cacdce;
-}
-#navigation-show-more-view {
-  background-color: #fff;
 }

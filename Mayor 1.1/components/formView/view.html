@@ -1,0 +1,118 @@
+<div id="report-view" data-role="view" data-title="report" data-layout="main" data-model="app.formView" data-show="app.formView.onShow"  data-before-show="app.formView.checkLogin">
+    <div class="start-report-view">
+        <div class="fullscreen">
+            <div class="fullscr-row">
+                <div class="fullscr-top">
+                    <h1>Докладвай нередност</h1>
+                </div>
+            </div>
+            <div class="fullscr-row">
+                <div class="fullscr-middle">
+                    <div class="circle-button" onclick="app.formView.takePhoto();">
+                        <div>
+                            <span class="km-icon km-icon-plus"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="fullscr-row">
+                <div class="fullscr-bottom">
+                    <div class="col-12">
+                        <h2>Отговорен орган:</h2>
+                    </div>
+                    <div class="col-5">
+                        <div class="coat-of-arms">
+                            <img src="images/temp/sofia.png">
+                        </div>
+                    </div>
+                    <div class="col-7">
+                        <div id="cityInfo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </div>
+    
+    <div class="steps-view">
+		<div class="col-3">
+            <span class="km-icon km-icon-photo"></span>
+        </div>
+        <div class="col-3">
+            <span class="km-icon km-icon-pin"></span>
+        </div>
+        <div class="col-3">
+            <span class="km-icon km-icon-write"></span>
+        </div>
+        <div class="col-3">
+            <span class="km-icon km-icon-back"></span>
+        </div>
+    </div>
+    
+    <div class="photos-view">
+        <h1>Добави снимка от инцидента</h1>
+        <div class="scrolview-photos" id="scrollview" data-role="scrollview" data-template="photos" data-items-per-page="1">
+        </div>
+        <div class="add-another-photo" onclick="app.formView.takePhoto();">
+            <div class="another-photo">
+                <span class="km-icon km-icon-circle-plus"></span>
+            </div>
+            <h4> Добави друга снимка</h4>
+        </div>
+    </div>
+    
+
+    <div class="location-view">
+        <div id="locationMap" style="width:100%;height:100%"></div>
+    </div>
+    
+    <div class="comment-view">
+        <h1>Посочи категория на инцидента</h1>
+        <div id="categories">
+        </div>
+        <h2 class="comment-view-h2">
+            <span class="km-icon km-icon-comment"></span>
+            Добави коментар
+        </h2>
+        <div class="comment-txtarea">
+            <textarea class="comment" name="test" rows="10" placeholder="Моля, напишете коментар..."></textarea>
+        </div>
+    </div>
+    
+    <div class="user-info-view">
+        <div class="container">
+           <h1>Репортажът ще бъде изпратен до:</h1>
+           <div class="municipality">
+             	<div class="col-5">
+                    <div class="coat-of-arms">
+                    	<img src="images/temp/sofia.png">
+                    </div>
+               	</div>
+                <div class="col-7">
+                    <div id="city">
+                    </div>
+                </div>
+            </div>
+            <h2>Добави данни за контакт (по избор)</h2>
+            <div id="userInfo">
+            </div>
+        </div>
+    </div>
+    
+    <footer class="prev-next" data-role="footer">
+        <div data-role="tabstrip" class="navigation">
+            <a data-icon="icon-arrow-left" onclick="app.formView.prev();"></a>
+            <a data-icon="icon-arrow-right" onclick="app.formView.next();"></a>
+        </div>
+        <div data-role="tabstrip" class="send" style="display:none;">
+            <a data-icon="icon-arrow-left" onclick="app.formView.prev();"></a>
+            <a data-icon="icon-arrow-right" onclick="app.formView.send();"></a>
+        </div>
+    </footer>
+    
+</div>
+<script type="text/x-kendo-template" id="photos">
+    <div data-role="page" style="text-align: center;">
+        <img class="photo" src="data:image/jpeg;base64,#=img#">
+    </div>
+</script>

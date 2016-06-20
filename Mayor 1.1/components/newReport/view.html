@@ -1,0 +1,20 @@
+<div data-role="view" data-title="profile" data-layout="main" data-model="app.newReport" data-show="app.newReport.onShow">
+    <!-- START_CUSTOM_CODE_profileView -->
+    <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
+    <div id="newReportView" data-role="scrollview" data-template="newReport" data-items-per-page="1">
+    </div>
+    <div id="followNewReport">
+    </div>
+    <h2>Информация</h2>  
+    <div id="newRportInfo" data-role="scroller">
+    </div>
+    <a href="javascript:void(0);" class="button">Сподели</a>
+    <div id="ts-changeStatusNewReport">
+    </div>
+    <!-- END_CUSTOM_CODE_profileView -->
+</div>
+<script type="text/x-kendo-template" id="newReport">
+    <div data-role="page" style="text-align: center;">
+        <img style="width:100%;" src="#=Url#">
+    </div>
+</script>

@@ -2,55 +2,45 @@
 <html>
 
 <head>
-    <title></title>
+    <title>Mayor App</title>
     <meta charset="utf-8">
     <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet">
-
-    <link href="styles/overrides.css" rel="stylesheet">
     <link href="styles/main.css" rel="stylesheet">
-
     <script src="cordova.js"></script>
-    <script src="kendo/js/jquery.min.js"></script>
+    <script src="js/everlive.all.min.js"></script>
+    <script src="kendo/js/jquery-2.2.4.min.js"></script>
     <script src="kendo/js/kendo.mobile.min.js"></script>
     <script src="app.js"></script>
+    <script src="js/mayorMobile.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?region=bg&language=bg&key=AIzaSyB7QM5gFOw8bFuJK-0En1i7XF695rohbdo&libraries=places"></script>
+    <script src="js/helper.js"></script>
+    <script src="js/identity-provider.js"></script>
+    <script src="js/global.js"></script>
+    <script src="models/location.js"></script>
+    <script src="models/user.js"></script>
+    <script src="models/updatereport.js"></script>
+    <script src="models/report.js"></script>
 </head>
 
 <body id="kendoUiMobileApp">
+    <script src="components/authenticationView/index.js"></script>
+    <script src="components/profileView/index.js"></script>
+    <script src="components/formView/index.js"></script>
     <script src="components/home/index.js"></script>
+    <script src="components/selectedReport/index.js"></script>
+    <script src="components/newReport/index.js"></script>
+    <script src="components/updatedReports/index.js"></script>
+    <script src="components/selectUpdatedReport/index.js"></script>
     <div data-role="layout" data-id="main">
         <header data-role="header">
-            <div data-role="navbar">
-                <span data-role="view-title"></span>
+            <div data-role="tabstrip" id="navigation-container" data-select="selectMenu">
+                <a href="components/home/view.html" data-icon="icon-construction"></a>
+                <a href="components/formView/view.html" data-icon="icon-people"></a>
+                <a href="components/profileView/view.html" data-icon="icon-tool"></a>
+                <a id="counter-update-reports" href="components/updatedReports/view.html" data-icon="icon-malfunction">&nbsp;</a>
             </div>
         </header>
-        <footer data-role="footer">
-            <div data-role="tabstrip" id="navigation-container">
-                <a href="components/home/view.html" data-icon="home">Home View</a>
-            </div>
-            <div id="navigation-container-more" style="display: none">
-            </div>
-        </footer>
     </div>
-
-
-    <div id="navigation-show-more-view">
-        <header class="km-header">
-            <div class="header-text km-widget km-navbar">
-                <div class="km-leftitem">
-                    <a class="km-widget km-button km-back" id="more-view-back">
-                        <span class="km-text">Back</span>
-                    </a>
-                </div>
-                <div class="km-view-title">
-                    <span>Show More</span>
-                </div>
-            </div>
-        </header>
-
-        <ul data-role="listview" data-style="inset" class="km-widget km-listview km-list km-listinset">
-        </ul>
-    </div>
-
     <div data-role="layout" data-id="main-nonav">
         <header data-role="header">
             <div data-role="navbar">
@@ -60,10 +50,27 @@
         <footer data-role="footer">
         </footer>
     </div>
-    <!-- START_CUSTOM_CODE_kendoUiMobileApp -->
-    <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
-
-    <!-- END_CUSTOM_CODE_kendoUiMobileApp -->
+    <div class="spinner" style="display:none;">
+        <div class="spin-position">
+            <div class='uil-default-css' style='transform:scale(0.25);'>
+                <div style='top:65px;left:93px;width:14px;height:70px;background:rgba(6,94,175,0.89);-webkit-transform:rotate(0deg) translate(0,-66px);transform:rotate(0deg) translate(0,-66px);border-radius:20px;position:absolute;'></div>
+                <div style='top:65px;left:93px;width:14px;height:70px;background:rgba(6,94,175,0.89);-webkit-transform:rotate(24deg) translate(0,-66px);transform:rotate(24deg) translate(0,-66px);border-radius:20px;position:absolute;'></div>
+                <div style='top:65px;left:93px;width:14px;height:70px;background:rgba(6,94,175,0.89);-webkit-transform:rotate(48deg) translate(0,-66px);transform:rotate(48deg) translate(0,-66px);border-radius:20px;position:absolute;'></div>
+                <div style='top:65px;left:93px;width:14px;height:70px;background:rgba(6,94,175,0.89);-webkit-transform:rotate(72deg) translate(0,-66px);transform:rotate(72deg) translate(0,-66px);border-radius:20px;position:absolute;'></div>
+                <div style='top:65px;left:93px;width:14px;height:70px;background:rgba(6,94,175,0.89);-webkit-transform:rotate(96deg) translate(0,-66px);transform:rotate(96deg) translate(0,-66px);border-radius:20px;position:absolute;'></div>
+                <div style='top:65px;left:93px;width:14px;height:70px;background:rgba(6,94,175,0.89);-webkit-transform:rotate(120deg) translate(0,-66px);transform:rotate(120deg) translate(0,-66px);border-radius:20px;position:absolute;'></div>
+                <div style='top:65px;left:93px;width:14px;height:70px;background:rgba(6,94,175,0.89);-webkit-transform:rotate(144deg) translate(0,-66px);transform:rotate(144deg) translate(0,-66px);border-radius:20px;position:absolute;'></div>
+                <div style='top:65px;left:93px;width:14px;height:70px;background:rgba(6,94,175,0.89);-webkit-transform:rotate(168deg) translate(0,-66px);transform:rotate(168deg) translate(0,-66px);border-radius:20px;position:absolute;'></div>
+                <div style='top:65px;left:93px;width:14px;height:70px;background:rgba(6,94,175,0.89);-webkit-transform:rotate(192deg) translate(0,-66px);transform:rotate(192deg) translate(0,-66px);border-radius:20px;position:absolute;'></div>
+                <div style='top:65px;left:93px;width:14px;height:70px;background:rgba(6,94,175,0.89);-webkit-transform:rotate(216deg) translate(0,-66px);transform:rotate(216deg) translate(0,-66px);border-radius:20px;position:absolute;'></div>
+                <div style='top:65px;left:93px;width:14px;height:70px;background:rgba(6,94,175,0.89);-webkit-transform:rotate(240deg) translate(0,-66px);transform:rotate(240deg) translate(0,-66px);border-radius:20px;position:absolute;'></div>
+                <div style='top:65px;left:93px;width:14px;height:70px;background:rgba(6,94,175,0.89);-webkit-transform:rotate(264deg) translate(0,-66px);transform:rotate(264deg) translate(0,-66px);border-radius:20px;position:absolute;'></div>
+                <div style='top:65px;left:93px;width:14px;height:70px;background:rgba(6,94,175,0.89);-webkit-transform:rotate(288deg) translate(0,-66px);transform:rotate(288deg) translate(0,-66px);border-radius:20px;position:absolute;'></div>
+                <div style='top:65px;left:93px;width:14px;height:70px;background:rgba(6,94,175,0.89);-webkit-transform:rotate(312deg) translate(0,-66px);transform:rotate(312deg) translate(0,-66px);border-radius:20px;position:absolute;'></div>
+                <div style='top:65px;left:93px;width:14px;height:70px;background:rgba(6,94,175,0.89);-webkit-transform:rotate(336deg) translate(0,-66px);transform:rotate(336deg) translate(0,-66px);border-radius:20px;position:absolute;'></div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

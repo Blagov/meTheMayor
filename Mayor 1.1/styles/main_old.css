@@ -1,0 +1,716 @@
+#kendoUiMobileApp .image-with-text img {
+    float: left;
+    margin-right: 15px;
+}
+#kendoUiMobileApp .block {
+    display: block;
+    margin: 1em;
+    padding: 1em;
+    text-align: center;
+}
+#kendoUiMobileApp .button-group,
+#kendoUiMobileApp .icon-group {
+    width: 100%;
+    display: table;
+    border-collapse: separate;
+    border-spacing: 1em;
+}
+#kendoUiMobileApp .button-group {
+    table-layout: fixed;
+}
+#kendoUiMobileApp .button-group .km-button {
+    display: table-cell;
+    padding: .6em .8em;
+    margin: 1em 0;
+}
+#kendoUiMobileApp .button-group.button-group-vertical .km-button {
+    display: block;
+}
+#kendoUiMobileApp.km-flat .button-group .km-button.primary {
+    color: #fff;
+    background-color: #10c4b2;
+}
+#kendoUiMobileApp.km-ios7 .button-group .km-button.primary {
+    color: #fff;
+    background-color: #007aff;
+}
+#kendoUiMobileApp.km-android .button-group .km-button.primary {
+    color: #fff;
+    background-color: #33b5e5;
+}
+#kendoUiMobileApp.km-nova .button-group .km-button.primary {
+    color: #fff;
+    background-color: #ff4350;
+    border-color: #ff4350;
+}
+#kendoUiMobileApp .group-separator {
+    border: none;
+    background: transparent;
+}
+#kendoUiMobileApp .group-separator-header {
+    margin: 1em 0;
+}
+#kendoUiMobileApp .app-icon {
+    text-align: center;
+    margin: 3em 0;
+}
+#kendoUiMobileApp .view-title {
+    text-align: center;
+    font-weight: normal;
+}
+#kendoUiMobileApp .km-drawer-button:after,
+#kendoUiMobileApp .km-drawer-button:before {
+    content: '\e077';
+}
+#kendoUiMobileApp .km-notification:after,
+#kendoUiMobileApp .km-notification:before {
+    content: '\e0de';
+}
+#kendoUiMobileApp.km-flat .km-drawer .km-content {
+    background-color: #fcfcfc;
+}
+#kendoUiMobileApp form .form-content li p {
+    margin: 0;
+}
+#kendoUiMobileApp .icon-group .app-icon,
+#kendoUiMobileApp .icon-group .app-details {
+    display: table-cell;
+    vertical-align: top;
+}
+#kendoUiMobileApp .icon-group .app-icon {
+    margin: 0;
+    width: 5em;
+    overflow: hidden;
+    text-align: left;
+}
+#kendoUiMobileApp .icon-group .app-icon img {
+    display: block;
+    max-width: 5em;
+    height: auto;
+}
+#kendoUiMobileApp .icon-group .app-details h2,
+#kendoUiMobileApp .icon-group .app-details h4 {
+    font-weight: normal;
+    margin: 0;
+}
+#kendoUiMobileApp .icon-group .app-details h4 {
+    color: #828282;
+    margin-top: 0.5em;
+}
+#kendoUiMobileApp #navigation-container.km-tabstrip .km-button {
+    vertical-align: top;
+}
+#kendoUiMobileApp #navigation-container.km-tabstrip .km-button .km-text {
+    max-width: 100%;
+    word-wrap: break-word;
+}
+#kendoUiMobileApp #navigation-container .active {
+    background: #10c4b2;
+    color: #fff;
+}
+#kendoUiMobileApp #navigation-container .active:after {
+    color: #fff;
+}
+#kendoUiMobileApp.km-nova #navigation-container.km-tabstrip .km-button {
+    vertical-align: middle;
+}
+#kendoUiMobileApp.km-nova p {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+#kendoUiMobileApp.km-nova span.km-switch {
+    color: #ff4350;
+}
+#kendoUiMobileApp.km-nova span.km-switch.km-switch-on input[type=checkbox]:checked + span + span {
+    border-color: #ff4350;
+    background-color: #ff4350;
+}
+#kendoUiMobileApp .unsupported-preview {
+    text-align: center;
+    margin-top: 12rem;
+}
+#kendoUiMobileApp .info-icon {
+    margin: 0 auto;
+    width: 3.3rem;
+    height: 3.3rem;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAABIklEQVRoge3YMU4CURDG8R+KqImGxNoTWNgYqSgtvYBn8EY2nkE7LTwItbGUwhgLFSxgLTS4i4w+SOafTDc73/vydva9HZIkSZIlooNrPM6IK2wUW10DehjXRC9ScC2ymMkOROQ0JtrAv5MGvjAKyinGLgZmN/AAO5GCrchiU9rY9313R7jH2x9oJslvieqBU5z5+Zowwh0ugjTD6OBF/RWiioNI8YhzYBtbc+TvBWh+kiexwt/1CAPPuMR7QK3i9NU3cT9SMHugNGmgNGmgNCtvYD2ozjHOcYLDmtxNHOEJD0H6C9HGUPPbaBXD6bPF6Zp/8VV0FxVf+R6IMLDInGdpZkS35n99biKEo/6JWyazoKaj81eTGdE4SD9JkiRJVpMPXjloDVm2S04AAAAASUVORK5CYII=');
+    background-repeat: no-repeat;
+}
+#kendoUiMobileApp .editableListItem label {
+    display: block;
+}
+#kendoUiMobileApp .editableListItem label span {
+    display: inline-block;
+    width: 50%;
+    float: right;
+    word-break: break-word;
+}
+#kendoUiMobileApp .circle-button {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: solid 2px rgba(255, 255, 255, 0);
+    background-color: rgba(29, 132, 49, 0.3);
+    position: relative;
+    margin: 10% auto;
+}
+#kendoUiMobileApp .circle2-button {
+    height: 160px;
+    width: 160px;
+    background-color: rgba(251, 252, 251, 0.47);
+    position: relative;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0);
+    margin: 1.1em auto;
+}
+#kendoUiMobileApp .circle3-button {
+    height: 120px;
+    width: 120px;
+    background-color: rgba(183, 19, 19, 0.75);
+    position: relative;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0);
+    margin: 1.1em auto;
+}
+#kendoUiMobileApp .circle4-button {
+    height: 75px;
+    width: 75px;
+    background-color: rgba(0, 0, 0, 0.95);
+    position: relative;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0);
+    margin: 1.3em auto;
+}
+#kendoUiMobileApp .circle4-button p {
+    color: #fff;
+    font-size: 60px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: bolder;
+}
+#kendoUiMobileApp .middle {
+    position: relative;
+    margin-left: 27%;
+    margin-top: 10%;
+}
+.fieldlist {
+    margin: 0 0 -1em;
+    padding: 0;
+}
+.fieldlist li {
+    list-style: none;
+    padding-bottom: 1em;
+}
+.km-nova .km-content {
+    background-color: #fff;
+}
+.km-nova .km-tabstrip {
+    background-image: linear-gradient(rgb(255, 255, 255) 0px, rgb(255, 255, 255) 100%);
+}
+.km-nova .km-tabstrip .km-button {
+    color: #202C31;
+}
+.km-nova .km-tabstrip .km-button.km-state-active {
+    background-image: linear-gradient(rgb(255, 255, 255) 0px, rgb(255, 255, 255) 100%);
+}
+#kendoUiMobileApp .active-step {
+    background-color: #5CC251;
+}
+#kendoUiMobileApp .photo {
+    width: 100%;
+    height: auto
+}
+#kendoUiMobileApp .km-arrow-n:after,
+#kendoUiMobileApp .km-arrow-n:before {
+    content: "\e317";
+}
+#kendoUiMobileApp .km-arrow-p:after,
+#kendoUiMobileApp .km-arrow-p:before {
+    content: "\e317";
+    transform: rotate(180deg);
+}
+#kendoUiMobileApp .km-send:after,
+#kendoUiMobileApp .km-send:before {
+    content: "\e069";
+}
+#kendoUiMobileApp .km-location:after,
+#kendoUiMobileApp .km-location:before {
+    content: "\e0b4"
+}
+#kendoUiMobileApp .km-settings:after,
+#kendoUiMobileApp .km-settings:before {
+    content: "\e0a4";
+}
+#kendoUiMobileApp .km-camera:after,
+#kendoUiMobileApp .km-camera:before {
+    content: "\e305";
+}
+#kendoUiMobileApp .km-flash:after,
+#kendoUiMobileApp .km-flash:before {
+    content: "\e0c1";
+}
+#kendoUiMobileApp .km-report:after,
+#kendoUiMobileApp .km-report:before {
+    content: "\e320";
+}
+#kendoUiMobileApp .km-coment:after,
+#kendoUiMobileApp .km-coment:before {
+    content: "\e093";
+}
+#kendoUiMobileApp .km-plus:after,
+#kendoUiMobileApp .km-plus:before {
+    content: "\e039"
+}
+#kendoUiMobileApp .km-add-report:after,
+#kendoUiMobileApp .km-add-report:before {
+    content: "\e30a";
+}
+#kendoUiMobileApp .km-pollution:after,
+#kendoUiMobileApp .km-pollution:before {
+    content: "\e221"
+}
+#kendoUiMobileApp .km-pavement:after,
+#kendoUiMobileApp .km-pavement:before {
+    content: "\e0c5"
+}
+#kendoUiMobileApp .km-noise:after,
+#kendoUiMobileApp .km-noise:before {
+    content: "\e0b5"
+}
+#kendoUiMobileApp .km-parking:after,
+#kendoUiMobileApp .km-parking:before {
+    content: "\e036"
+}
+#kendoUiMobileApp .km-malfunction:after,
+#kendoUiMobileApp .km-malfunction:before {
+    content: "\e0fa"
+}
+#kendoUiMobileApp .km-animals:after,
+#kendoUiMobileApp .km-animals:before {
+    content: "\e30d"
+}
+#kendoUiMobileApp .km-criminal:after,
+#kendoUiMobileApp .km-criminal:before {
+    content: "\e100"
+}
+#kendoUiMobileApp .km-others:after,
+#kendoUiMobileApp .km-others:before {
+    content: "\e082"
+}
+#reports .km-state-active {
+    background-color: #4C4C4C;
+}
+#reports .km-button {
+    width: 10em;
+    height: 2.7em;
+}
+.ad-category-info {
+    background-color: rgba(27, 27, 27, 0.5);
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    bottom: 0px;
+    display: inline-block;
+}
+.report-info {
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    background-size: 100%;
+    position: relative;
+}
+.ad-category-info img {
+    margin-top: 15px;
+    margin-left: 10px;
+    display: inline-block;
+    margin-right: 3px;
+}
+.ad-category-info p {
+    display: inline-block;
+    color: #fff;
+    font-weight: 500;
+    font-size: 15px;
+    font-family: sans-serif;
+}
+.report-date {
+    position: absolute;
+    display: inline-block;
+    right: 0px;
+    top: 3px;
+}
+.report-date p {
+    display: inline-block;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: sans-serif;
+    font-style: normal;
+}
+.report-date img {
+    display: inline-block;
+    position: relative;
+    top: 2px;
+    margin-right: 2px;
+}
+.report-followers {
+    display: inline-block;
+    height: 26px;
+    width: 50px;
+    background-color: rgba(27, 27, 27, 0.5);
+    border-radius: 3px;
+    text-align: center;
+    position: absolute;
+    right: 10px;
+    top: 13%;
+}
+.report-followers p {
+    display: inline-block;
+    color: #fff;
+    font-weight: 500;
+    font-size: 15px;
+    font-family: sans-serif;
+}
+.report-followers img {
+    display: inline-block;
+    position: relative;
+    top: 3px;
+    margin-right: 3px;
+}
+.profile-image {
+    display: inline-block;
+    border-radius: 3px;
+    position: absolute;
+    top: 1%;
+    left: 2%;
+}
+.spinner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #302929;
+    opacity: 0.7;
+    z-index: 3;
+}
+.km-nova .km-tabstrip .km-state-active .km-icon {
+    font-size: 2rem;
+}
+.km-nova .km-tabstrip .km-icon {
+    font-size: 1.2rem;
+}
+.reportHeader h3 {
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-right: 22%;
+    margin-left: 22%;
+    color: #fff;
+    font-weight: 500;
+    font-family: initial;
+    font-size: 18px;
+    font-style: normal;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border-top-right-radius: 15%;
+    border-top-left-radius: 15%;
+    border-bottom-right-radius: 15%;
+    border-bottom-left-radius: 15%;
+}
+#cityInfo h3 {
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-right: 22%;
+    margin-left: 22%;
+    color: #fff;
+    font-weight: 500;
+    font-family: initial;
+    font-size: 18px;
+    font-style: normal;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border-top-right-radius: 15%;
+    border-top-left-radius: 15%;
+    border-bottom-right-radius: 15%;
+    border-bottom-left-radius: 15%;
+    text-align: center;
+    margin-top: 40%;
+}
+.reportState h3 {
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-right: 30%;
+    margin-left: 30%;
+    color: #fff;
+    font-weight: 500;
+    font-family: initial;
+    font-size: 18px;
+    font-style: normal;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border-top-right-radius: 15%;
+    border-top-left-radius: 15%;
+    border-bottom-right-radius: 15%;
+    border-bottom-left-radius: 15%;
+}
+.photos-view h3 {
+    text-align: center;
+    height: 2em;
+    margin: 1em uto;
+    margin-top: 1em;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 500;
+}
+.km-pages {
+    display: none;
+}
+.another-photo {
+    color: #C9C9C9;
+    height: 4em;
+    width: 4em;
+    border-radius: 50%;
+    border: solid 2px #C9C9C9;
+    margin: 1em auto;
+}
+.comment-view h3 {
+    text-align: center;
+    font-size: 18px;
+    font-family: inherit;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+#categories .km-icon:after,
+#categories .km-icon:before {
+    height: 40%;
+}
+.upCategory {
+    border-bottom: double 0.1em #656565;
+    border-right: double 0.1em #656565;
+}
+.downCategory {
+    border-right: double 0.1em #656565;
+}
+.lastCategory {
+    border-bottom: double 0.1em #656565;
+}
+#categories div {
+    padding: 10px;
+    background-color: rgb(31, 31, 31);
+    height: 5.5em;
+}
+#categories span {
+    color: white;
+    text-align: center;
+}
+#categories h5 {
+    margin-top: -0.3em;
+    color: white;
+    text-align: center;
+}
+#categories div.activeCategory {
+    background-color: rgb(207, 32, 32);
+}
+#categories div.activeCategory span {
+    color: black;
+}
+#categories div.activeCategory h5 {
+    color: black;
+}
+@-webkit-keyframes uil-default-anim {
+    0% {
+        opacity: 1
+    }
+    100% {
+        opacity: 0
+    }
+}
+@keyframes uil-default-anim {
+    0% {
+        opacity: 1
+    }
+    100% {
+        opacity: 0
+    }
+}
+.uil-default-css > div:nth-of-type(1) {
+    -webkit-animation: uil-default-anim 1.2s linear infinite;
+    animation: uil-default-anim 1.2s linear infinite;
+    -webkit-animation-delay: -0.6s;
+    animation-delay: -0.6s;
+}
+.uil-default-css {
+    position: relative;
+    background: none;
+    width: 200px;
+    height: 200px;
+}
+.uil-default-css > div:nth-of-type(2) {
+    -webkit-animation: uil-default-anim 1.2s linear infinite;
+    animation: uil-default-anim 1.2s linear infinite;
+    -webkit-animation-delay: -0.52s;
+    animation-delay: -0.52s;
+}
+.uil-default-css {
+    position: relative;
+    background: none;
+    width: 200px;
+    height: 200px;
+}
+.uil-default-css > div:nth-of-type(3) {
+    -webkit-animation: uil-default-anim 1.2s linear infinite;
+    animation: uil-default-anim 1.2s linear infinite;
+    -webkit-animation-delay: -0.43999999999999995s;
+    animation-delay: -0.43999999999999995s;
+}
+.uil-default-css {
+    position: relative;
+    background: none;
+    width: 200px;
+    height: 200px;
+}
+.uil-default-css > div:nth-of-type(4) {
+    -webkit-animation: uil-default-anim 1.2s linear infinite;
+    animation: uil-default-anim 1.2s linear infinite;
+    -webkit-animation-delay: -0.36s;
+    animation-delay: -0.36s;
+}
+.uil-default-css {
+    position: relative;
+    background: none;
+    width: 200px;
+    height: 200px;
+}
+.uil-default-css > div:nth-of-type(5) {
+    -webkit-animation: uil-default-anim 1.2s linear infinite;
+    animation: uil-default-anim 1.2s linear infinite;
+    -webkit-animation-delay: -0.27999999999999997s;
+    animation-delay: -0.27999999999999997s;
+}
+.uil-default-css {
+    position: relative;
+    background: none;
+    width: 200px;
+    height: 200px;
+}
+.uil-default-css > div:nth-of-type(6) {
+    -webkit-animation: uil-default-anim 1.2s linear infinite;
+    animation: uil-default-anim 1.2s linear infinite;
+    -webkit-animation-delay: -0.19999999999999996s;
+    animation-delay: -0.19999999999999996s;
+}
+.uil-default-css {
+    position: relative;
+    background: none;
+    width: 200px;
+    height: 200px;
+}
+.uil-default-css > div:nth-of-type(7) {
+    -webkit-animation: uil-default-anim 1.2s linear infinite;
+    animation: uil-default-anim 1.2s linear infinite;
+    -webkit-animation-delay: -0.12000000000000005s;
+    animation-delay: -0.12000000000000005s;
+}
+.uil-default-css {
+    position: relative;
+    background: none;
+    width: 200px;
+    height: 200px;
+}
+.uil-default-css > div:nth-of-type(8) {
+    -webkit-animation: uil-default-anim 1.2s linear infinite;
+    animation: uil-default-anim 1.2s linear infinite;
+    -webkit-animation-delay: -0.039999999999999925s;
+    animation-delay: -0.039999999999999925s;
+}
+.uil-default-css {
+    position: relative;
+    background: none;
+    width: 200px;
+    height: 200px;
+}
+.uil-default-css > div:nth-of-type(9) {
+    -webkit-animation: uil-default-anim 1.2s linear infinite;
+    animation: uil-default-anim 1.2s linear infinite;
+    -webkit-animation-delay: 0.040000000000000036s;
+    animation-delay: 0.040000000000000036s;
+}
+.uil-default-css {
+    position: relative;
+    background: none;
+    width: 200px;
+    height: 200px;
+}
+.uil-default-css > div:nth-of-type(10) {
+    -webkit-animation: uil-default-anim 1.2s linear infinite;
+    animation: uil-default-anim 1.2s linear infinite;
+    -webkit-animation-delay: 0.12s;
+    animation-delay: 0.12s;
+}
+.uil-default-css {
+    position: relative;
+    background: none;
+    width: 200px;
+    height: 200px;
+}
+.uil-default-css > div:nth-of-type(11) {
+    -webkit-animation: uil-default-anim 1.2s linear infinite;
+    animation: uil-default-anim 1.2s linear infinite;
+    -webkit-animation-delay: 0.20000000000000007s;
+    animation-delay: 0.20000000000000007s;
+}
+.uil-default-css {
+    position: relative;
+    background: none;
+    width: 200px;
+    height: 200px;
+}
+.uil-default-css > div:nth-of-type(12) {
+    -webkit-animation: uil-default-anim 1.2s linear infinite;
+    animation: uil-default-anim 1.2s linear infinite;
+    -webkit-animation-delay: 0.28s;
+    animation-delay: 0.28s;
+}
+.uil-default-css {
+    position: relative;
+    background: none;
+    width: 200px;
+    height: 200px;
+}
+.uil-default-css > div:nth-of-type(13) {
+    -webkit-animation: uil-default-anim 1.2s linear infinite;
+    animation: uil-default-anim 1.2s linear infinite;
+    -webkit-animation-delay: 0.3599999999999999s;
+    animation-delay: 0.3599999999999999s;
+}
+.uil-default-css {
+    position: relative;
+    background: none;
+    width: 200px;
+    height: 200px;
+}
+.uil-default-css > div:nth-of-type(14) {
+    -webkit-animation: uil-default-anim 1.2s linear infinite;
+    animation: uil-default-anim 1.2s linear infinite;
+    -webkit-animation-delay: 0.44000000000000006s;
+    animation-delay: 0.44000000000000006s;
+}
+.uil-default-css {
+    position: relative;
+    background: none;
+    width: 200px;
+    height: 200px;
+}
+.uil-default-css > div:nth-of-type(15) {
+    -webkit-animation: uil-default-anim 1.2s linear infinite;
+    animation: uil-default-anim 1.2s linear infinite;
+    -webkit-animation-delay: 0.5200000000000001s;
+    animation-delay: 0.5200000000000001s;
+}
+.uil-default-css {
+    position: relative;
+    background: none;
+    width: 200px;
+    height: 200px;
+}
+.spin-position{
+    position: relative;
+    top: 30%;
+    left: 25%;
+}

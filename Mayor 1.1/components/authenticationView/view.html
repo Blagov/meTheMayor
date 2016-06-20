@@ -1,0 +1,48 @@
+<div data-role="view" data-title="sign in" data-layout="main" data-model="app.authenticationView" data-show="app.authenticationView.onShow">
+    <div class="signin-view active">
+        <form id="sign-in">
+            <ul data-role="listview" data-style="inset">
+                <li>
+                    <label>Email
+                        <input type="email" name="username" autofocus>
+                    </label>
+                </li>
+                <li>
+                    <label>Password
+                        <input type="password" name="password">
+                    </label>
+                </li>
+            </ul>
+            <div class="button-group button-group-vertical">
+                <a class="primary km-widget km-button" onclick="app.authenticationView.signIn();">Sign In</a>
+                <a class="km-widget km-button" onclick="app.authenticationView.toggleView();">Register</a>
+                <a class="km-widget km-button" onclick="app.authenticationView.facebookAuthnetication();">Facebook Login</a>
+            </div>
+        </form>
+    </div>
+    <div class="signup-view" style="display:none;">
+        <form id="register">
+            <ul data-role="listview" data-style="inset">
+                <li>
+                    <label>Email
+                        <input type="email" name="username">
+                    </label>
+                </li>
+                <li>
+                    <label>Password
+                        <input type="password" name="password">
+                    </label>
+                </li>
+                <li>
+                    <label>Name
+                        <input type="text" name="displayName">
+                    </label>
+                </li>
+            </ul>
+            <div class="button-group button-group-vertical">
+                <a class="primary km-widget km-button" onclick="app.authenticationView.register();">Register</a>
+                <a class="km-widget km-button" onclick="app.authenticationView.toggleView();">Sign In</a>
+            </div>
+        </form>
+    </div>
+</div>

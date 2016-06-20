@@ -1,0 +1,21 @@
+<div class="ReportView" data-role="view" data-title="selectUpdatedReport" data-layout="main" data-model="app.selectUpdatedReport" data-show="app.selectUpdatedReport.onShow">
+
+    <!-- START_CUSTOM_CODE_profileView -->
+    <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
+	<div id="updateReportView" data-role="scrollview" data-template="updateReport" data-items-per-page="1">
+    </div>
+     <div id="followUpdateReport">
+    </div>
+    <h2>Информация</h2>    
+    <div id="updateRportInfo" data-role="scroller">
+    </div>
+	<a href="javascript:void(0);" class="button">Сподели</a>
+    <div id="ts-changeStatusUpdateReport">
+    </div>
+    <!-- END_CUSTOM_CODE_profileView -->
+</div>
+<script type="text/x-kendo-template" id="updateReport">
+    <div data-role="page" style="text-align: center;">
+        <img style="width:100%;" src="#=Url#">
+    </div>
+</script>
