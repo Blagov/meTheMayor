@@ -2,6 +2,7 @@ var problemStatus = ["В процес на одобрение", "В процес
 var scrollBool = true;
 var fastSelect = true;
 var switchView = 0;
+var switchviewProfile = 0;
 var appSettings   = {
     facebook: {
         appId: '827211330685873', // Put your Facebook App ID here

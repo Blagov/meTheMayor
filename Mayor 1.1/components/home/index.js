@@ -30,17 +30,8 @@ app.home = kendo.observable({
         if(user == null){
             User.authentication(function(err){
                 app.home.showAroundReports(event, scroller);
-                if(err == null){
-                   User.getFollowedUpdatedProblems(function(err, report){
-                        if(err == null){
-                            UpdateReport.setUpReports(report);
-                            $('#counter-update-reports .km-text').html(UpdateReport.getUpReports().length);
-                        }else{
-                            console.log(err);
-                        }
-                   });
-                }else{
-                   console.log(err);
+                if(err){
+					console.log(err);
                 }
         	});
         }else{
@@ -54,6 +45,7 @@ app.home = kendo.observable({
     showAroundReports: function(event, scroller){
         if(Report.arround.length == 0){
            Report.getArroundData(function(err, data){
+                console.log(data);
                 fastSelect = true;
                 $(".spinner").hide();
                 if(err){

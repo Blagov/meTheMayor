@@ -3,7 +3,16 @@
 app.selectUpdatedReport = kendo.observable({
     onShow: function() {
         app.formView.removeStartReportView();
-        var report = UpdateReport.getUpReport().Problem;
+        var reports = Report.getUserLoadedReports();
+        var selected = Report.getUsrRepSelected();
+        var report;
+        if(switchviewProfile == 0){
+            report = reports.open[selected];
+        }else if(switchviewProfile == 1){
+            report = reports.progress[selected];
+        }else if(switchviewProfile == 2){
+            report = reports.closed[selected];
+        }
         var height = screen.width;
         var items = {
             data: report.Images,
@@ -14,13 +23,12 @@ app.selectUpdatedReport = kendo.observable({
         var ds = new kendo.data.DataSource(items);
         var scrollView = $("#updateReportView").data("kendoMobileScrollView");
         scrollView.setDataSource(ds);
-        //var html = "<h5> Време: #=dateFormat(data.CreatedAt)#</h5><h5>Категория: #=data.Category.Name# </h5><h5>Статус: #=problemStatus[data.Status]# </h5><h5>Последователи: #=getFollowers(data) #</h5><h5>Адрес: #=data.Address#</h5><h5>Потребител: #=data.Owner.DisplayName#</h5><h5>Организация:  #=data.Region#</h5><h5> Коментар: #=data.Comment#</h5>";
         var html = "<div class=\"info-row\"><label>Докладвано преди</label> #=dateFormat(data.CreatedAt)#</div><div class=\"info-row\"><label>Докладвано от</label>#=data.Owner.DisplayName#</div><div class=\"info-row\"><label>Отговорен орган</label>#=data.Region#</div><div class=\"info-row\"><label>Адрес</label>#=data.Address#</div><div class=\"info-row comment-info\"><label>Коментар</label><div class=\"comment-txt\">#=data.Comment#</div></div>";
         var template = kendo.template(html);
         var result = template(report);
         var scroller = $("#updateRportInfo").data("kendoMobileScroller");
         scroller.scrollElement.html(result);
-		$('#followUpdateReport').html('<a class=\"button\" onclick="app.selectUpdatedReport.unFollow(\''+ report.Id + '\');">Не искам да следя този проблем</a>');
+        $('#followUpdateReport').html('<a class=\"button\" onclick="app.selectUpdatedReport.unFollow(\''+ report.Id + '\');">Не искам да следя този проблем</a>');
         // change status for admins
         if(User.getUser().IsAdmin){
             var chanteStatusHTML = '<div class="styled-select"><select onchange="app.selectUpdatedReport.changeStatus(\''+ report.Id + '\')">';
@@ -34,21 +42,9 @@ app.selectUpdatedReport = kendo.observable({
             chanteStatusHTML += '</select></div>';
             $('#ts-changeStatusUpdateReport').html(chanteStatusHTML);
         }
-        
-        // update status
-        
-        var data = app.data.mayorMobile.data('Followers');
-        data.updateSingle({ Id: UpdateReport.getUpReport().Id, Seen: true},
-            function(data){
-                //console.log(JSON.stringify(data));
-                UpdateReport.removeReport(UpdateReport.selected);
-                $('#counter-update-reports .km-text').html(UpdateReport.getUpReports().length);
-            },
-            function(error){
-                console.log(error);
-        });
     },
     follow: function(id){
+        console.log(id);
         $(".spinner").show();
 		Report.followReport(id, function(err){
             if(err){

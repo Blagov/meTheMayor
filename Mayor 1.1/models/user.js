@@ -16,18 +16,7 @@ class User{
         }
         provider.authentication.login(user.username, user.password, function(data) {
             self.authentication(function(err){
-                if(err){
-                    console.log(err);
-                }else{
-                    self.getFollowedUpdatedProblems(function(err, report){
-                        if(err){
-                            console.log(err);
-                        }else{
-                            UpdateReport.setUpReports(report);
-                            callback(err, data);
-                        }
-                   });
-                }
+                callback(err, null);
             })
         }, function(err) {
             callback(err, null);
@@ -57,14 +46,7 @@ class User{
                             var provider = app.data.mayorMobile;
                             provider.Users.updateSingle({ Id: User.getUser().Id, 'Picture': User.getUser().Identity.Facebook.id },
                                 function(data){
-                                    self.getFollowedUpdatedProblems(function(err, report){
-                                        if(err){
-                                            callback(err, null);
-                                        }else{
-                                            UpdateReport.setUpReports(report);
-                                            callback(null, true);
-                                        }
-                                   });
+                                	callback(null, true);
                                 },
                                 function(error){
                                     alert(JSON.stringify(error));
@@ -118,9 +100,11 @@ class User{
                 self.user = data.result;
                 var pushSettings = {
                     iOS: { 
-                        badge: true, 
-                        sound: true, 
-                        alert: true },
+                        badge: true,
+                        sound: true,
+                        alert: true,
+                        clearBadge: true 
+                    },
                     android: {
                         senderID: appSettings.androidProjectNumber
                     },
@@ -131,15 +115,6 @@ class User{
                                 app.mobileApp.navigate('components/home/view.html');
                                 app.mobileApp.navigate('components/newReport/view.html'); 
                             }, 2000);
-                        }else if(args.payload.updated){
-                            self.getFollowedUpdatedProblems(function(err, problems){
-                                if(err == null){
-                                    UpdateReport.setUpReports(problems);
-                                    $('#counter-update-reports .km-text').html(problems.length);
-                                }else{
-                                    callback(err);
-                                }
-                            });
                         }
                     },
                     notificationCallbackIOS : function(args) {
@@ -149,15 +124,6 @@ class User{
                                 app.mobileApp.navigate('components/home/view.html');
                                 app.mobileApp.navigate('components/newReport/view.html'); 
                             }, 2000);
-                        }else if(args.payload.updated){
-                            self.getFollowedUpdatedProblems(function(err, problems){
-                                if(err == null){
-                                    UpdateReport.setUpReports(problems);
-                                    $('#counter-update-reports .km-text').html(problems.length);
-                                }else{
-                                    callback(err);
-                                }
-                            });
                         }
                     },
                     customParameters: {}
@@ -238,55 +204,7 @@ class User{
              callback("User not authenticated");
         }
     }
-    
-    static getFollowedUpdatedProblems(callback){
-        var user = this.getUser();
-        if(user != null){
-            var id = user.Id;
-            var provider = app.data.mayorMobile.data('Followers');
-            var filter = new Everlive.Query();
-            filter.orderDesc('ModifiedAt').select('Problem','ModifiedAt').where().eq('Owner', id).eq('Seen',false);
-            provider.withHeaders({
-                    "X-Everlive-Expand": {
-                        "Problem": {
-                            "TargetTypeName": "Problems",
-                            "Expand": {
-                                "Category": {
-                                    "Fields": {
-                                        	"Id": 1,
-                                            "Class": 1,
-                                            "Name": 1
-                                        },
-                                    "TargetTypeName" : "Categories",
-                                    "ReturnAs" : "Category"
-                                    },
-                                "Images.Problem": {
-                                    "Fields": {
-                                        	"Url": 1,
-                                            "Problem": 0
-                                        },
-                                    "TargetTypeName" : "Images",
-                                    "ReturnAs" : "Images"
-                                    },
-                                "Owner": {
-                                    "TargetTypeName" : "Users",
-                                    "ReturnAs" : "Owner"
-                                    }
-                            } 
-                        }
-                    }
-                })
-                .get(filter)
-                .then(function (data) {
-                    callback(null, data.result);
-                },
-                function (error) {
-                    callback(error, null);
-            });
-        }else{
-             callback("User not authenticated");
-        }
-    }
+   
     
     static isFollowedProblem(problemId, callback){
         var user = this.getUser();
@@ -313,5 +231,24 @@ class User{
     
     static getUserLocation(){
         return this.location;
+    }
+    
+    static userUpdate(data, callback){
+        var self = this;
+        var provider = app.data.mayorMobile
+        provider.Users.update(data, // data
+            { Id: self.id }, // filter
+            function(data){
+                self.authentication(function(err){
+                    if(err){
+                        callback(err);
+                    }else{
+                        callback(null);
+                    }
+            	})
+            },
+            function(error){
+                callback(error);
+            });
     }
 }

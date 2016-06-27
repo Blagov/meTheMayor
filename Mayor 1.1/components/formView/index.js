@@ -142,7 +142,7 @@ app.formView = kendo.observable({
         }, function(message){
             	console.log('Failed because: ' + message);
         }, {
-            quality: 25,
+            quality: 23,
             destinationType: Camera.DestinationType.DATA_URL,
             encodingType: Camera.EncodingType.JPEG,
             correctOrientation: true

@@ -5,15 +5,20 @@ class Report{
     static initialize(){
         this.arround = [];
         this.last = [];
+        this.userReports = {
+            open: [],
+            progress: [],
+            closed: []
+        }
         this.selected = null;
+        this.UsrRepSelected = null;
     }
     
     static followReport(id, callback){
         var provider = app.data.mayorMobile;
         var data = provider.data('Followers');
         data.create({
-            'Problem': id,
-            'Seen': true
+            'Problem': id
         },
         function (data) {
           callback(null, data);
@@ -225,7 +230,131 @@ class Report{
     }
     
     static getArroundReports(){
-        return this.arround
+        return this.arround;
     }
     
+    static getUserReports(callback){
+        var user = User.getUser();
+        var self = this;
+        if(user != null){
+            var id = user.Id;
+            var provider = app.data.mayorMobile.data('Followers');
+            var filter = new Everlive.Query();
+            filter.orderDesc('ModifiedAt').where().eq('Owner', id);
+            provider.withHeaders({
+                    "X-Everlive-Expand": {
+                        "Problem": {
+                            "TargetTypeName": "Problems",
+                            "Expand": {
+                                "Category": {
+                                    "Fields": {
+                                        	"Id": 1,
+                                            "Class": 1,
+                                            "Name": 1
+                                        },
+                                    "TargetTypeName" : "Categories",
+                                    "ReturnAs" : "Category"
+                                    },
+                                "Images.Problem": {
+                                    "Fields": {
+                                        	"Url": 1,
+                                            "Problem": 0
+                                        },
+                                    "TargetTypeName" : "Images",
+                                    "ReturnAs" : "Images"
+                                    },
+                                "Owner": {
+                                    "TargetTypeName" : "Users",
+                                    "ReturnAs" : "Owner"
+                                    }
+                            } 
+                        }
+                    }
+                })
+                .get(filter)
+                .then(function (data) {
+                	self.userReports = {
+                        open: [],
+                        progress: [],
+                        closed: []
+                    }
+            		data.result.forEach(function(rep){
+                        if(rep.Problem.Status == 0){
+                            self.userReports.open.push(rep.Problem);
+                        }else if(rep.Problem.Status == 1){
+                            self.userReports.progress.push(rep.Problem);
+                        }else if(rep.Problem.Status == 2){
+                            self.userReports.closed.push(rep.Problem);
+                        }
+                    });
+                    callback(null, self.userReports);
+                },
+                function (error) {
+                    callback(error, null);
+            });
+        }else{
+             callback("User not authenticated");
+        }
+    }
+    
+    static getUserLoadedReports(){
+        return this.userReports;
+    }
+    
+    static setUsrRepSelected(id){
+        this.usrRepSelected = id;
+    }
+    
+    static getUsrRepSelected(){
+        return this.usrRepSelected;
+    } 
+    
+    static getFollowedUpdatedProblems(callback){
+        var user = User.getUser();
+        if(user != null){
+            var id = user.Id;
+            var provider = app.data.mayorMobile.data('Followers');
+            var filter = new Everlive.Query();
+            filter.orderDesc('ModifiedAt').where().eq('Owner', id);
+            provider.withHeaders({
+                    "X-Everlive-Expand": {
+                        "Problem": {
+                            "TargetTypeName": "Problems",
+                            "Expand": {
+                                "Category": {
+                                    "Fields": {
+                                        	"Id": 1,
+                                            "Class": 1,
+                                            "Name": 1
+                                        },
+                                    "TargetTypeName" : "Categories",
+                                    "ReturnAs" : "Category"
+                                    },
+                                "Images.Problem": {
+                                    "Fields": {
+                                        	"Url": 1,
+                                            "Problem": 0
+                                        },
+                                    "TargetTypeName" : "Images",
+                                    "ReturnAs" : "Images"
+                                    },
+                                "Owner": {
+                                    "TargetTypeName" : "Users",
+                                    "ReturnAs" : "Owner"
+                                    }
+                            } 
+                        }
+                    }
+                })
+                .get(filter)
+                .then(function (data) {
+                    callback(null, data.result);
+                },
+                function (error) {
+                    callback(error, null);
+            });
+        }else{
+             callback("User not authenticated");
+        }
+    }
 }

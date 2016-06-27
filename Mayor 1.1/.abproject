@@ -33,8 +33,7 @@
     "android.permission.LOCATION_HARDWARE"
   ],
   "DeviceOrientations": [
-    "Portrait",
-    "Landscape"
+    "Portrait"
   ],
   "AndroidHardwareAcceleration": "true",
   "iOSStatusBarStyle": "Default",
@@ -42,13 +41,19 @@
   "WP8TileTitle": "",
   "WP8Publisher": "",
   "WP8Capabilities": [
+    "ID_CAP_ISV_CAMERA",
+    "ID_CAP_LOCATION",
     "ID_CAP_NETWORKING",
+    "ID_CAP_PUSH_NOTIFICATION",
+    "ID_CAP_SENSORS",
     "ID_CAP_WEBBROWSERCOMPONENT"
   ],
-  "WP8Requirements": [],
+  "WP8Requirements": [
+    "ID_REQ_REARCAMERA"
+  ],
   "WP8PublisherID": "{e71a11e4-b355-4ac1-88a5-bdc7e94f74e3}",
   "WP8ProductID": "{388009a2-4277-44ee-834c-ce60eacf9c66}",
-  "WPSdk": "8.0",
+  "WPSdk": "8.1",
   "WP8PackageIdentityName": "1234Telerik.Mayor11",
   "WP8WindowsPublisherName": "CN=Telerik",
   "WP8SupportedResolutions": [

@@ -19,7 +19,6 @@ app.authenticationView = kendo.observable({
                     alert(err.message);
                 }else{
                     form[0].reset();
-                    $('#counter-update-reports .km-text').html(UpdateReport.getUpReports().length);
                     app.mobileApp.navigate('components/formView/view.html');
                 }
             });
@@ -63,13 +62,12 @@ app.authenticationView = kendo.observable({
         }
     },
     facebookAuthnetication: function(){
-        //$(".spinner").show();
+        $(".spinner").show();
         User.fbAuth(function(err, data){
             if(err){
                 alert(JSON.stringify(err));
             }else{
                 $(".spinner").hide();
-                $('#counter-update-reports .km-text').html(UpdateReport.getUpReports().length);
                 app.mobileApp.navigate('components/formView/view.html');
             }
         })
