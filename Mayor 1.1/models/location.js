@@ -8,7 +8,7 @@ class Geolocation {
 
     getLocation(cb) {
 
-        var options = { maximumAge: 0, timeout: 500000, enableHighAccuracy: true };
+        var options = { maximumAge: 0, timeout: 7*1000, enableHighAccuracy: true };
         navigator.geolocation.getCurrentPosition(
             function (position) {
                 cb(position, null);
@@ -23,7 +23,7 @@ class Geolocation {
         var that = this;
         that.getLocation(function (position, err) {
             if (err != null) {
-                alert("Включи GPS!");
+                cb(err, null);
             } else {
                 var location = {};
                 var geocoder = new google.maps.Geocoder();
@@ -53,7 +53,7 @@ class Geolocation {
                             location.address = substring;
                             location.coords = position.coords;
 
-                            cb(location);
+                            cb(null, location);
                         } else {
                             alert('No results found');
                         }

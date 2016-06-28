@@ -172,8 +172,26 @@ class User{
         var self = this;
         if(this.location == null){
             var geolocation = new Geolocation();
-            geolocation.getCityInfo(function(location){
-                self.location = location;
+            geolocation.getCityInfo(function(error, location){
+                if(error){
+                   self.location = {
+                       city: "Бургас",
+                       address: "ул. „Одрин“",
+                       country: "България",
+                       state: "Бургас",
+                       coords: {
+                           accuracy:"150.00",
+                           altitude:"100",
+                           altitudeAccuracy:"80.00",
+                           heading:"1.00",
+                           latitude:42.5048,
+                           longitude:27.4626,
+                           speed:"0.00"
+                       }
+                   }
+                }else{
+                   self.location = location;
+                }
                 callback();
             });
         }

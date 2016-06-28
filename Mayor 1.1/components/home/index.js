@@ -45,7 +45,6 @@ app.home = kendo.observable({
     showAroundReports: function(event, scroller){
         if(Report.arround.length == 0){
            Report.getArroundData(function(err, data){
-                console.log(data);
                 fastSelect = true;
                 $(".spinner").hide();
                 if(err){

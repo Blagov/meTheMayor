@@ -200,7 +200,7 @@ app.formView = kendo.observable({
         var center, map, mapProp, mark;
         var location = new Geolocation();
 
-        location.getCityInfo(function (locData) {
+        location.getCityInfo(function (error, locData) {
             var infowindow = new google.maps.InfoWindow({
                 content: locData.address
             });
@@ -229,7 +229,7 @@ app.formView = kendo.observable({
     cityInfo: function(v) {
         if(app.formView.city == null){
             var location = new Geolocation();
-            location.getCityInfo(function (locationData) {
+            location.getCityInfo(function (error, locationData) {
                 var template = kendo.template("<h3>#= state #</h3>");
                 var result = template(locationData);
                 $("#" + v).html(result);
