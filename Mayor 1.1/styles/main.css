@@ -203,7 +203,7 @@ a.button {display:block; text-decoration:none; }
     -o-border-radius:78px; 
     border-radius:78px; 
 }
-.listview-item .profile-img img {display:block; width:100%; height:auto; }
+.listview-item .profile-img img {display:block; max-width:100%; max-height:100%; width:auto; height:auto; }
 .listview-item .box-top-right {z-index:1; position:absolute; top:20px; right:2%; }
 .listview-item .report-date,
 .listview-item .report-followers {
@@ -535,9 +535,7 @@ a.button {display:block; text-decoration:none; }
     .km-nova p {font-size:16px; }
     
     .km-nova .km-tabstrip {height:50px; min-height:auto; }
-    
 	.km-nova .km-pages {height:1.5em;}
-    
     .button {padding:3% 2%; font-size:1.1em; line-height:1em;}
     
     #navigation-container.km-tabstrip .km-button .km-icon,
@@ -550,13 +548,16 @@ a.button {display:block; text-decoration:none; }
     #reports.km-widget.km-buttongroup .km-button:first-child, #status-report.km-widget.km-buttongroup .km-button:first-child {border-top-left-radius:18px; border-bottom-left-radius:18px; }
     #reports.km-widget.km-buttongroup .km-button:last-child, #status-report.km-widget.km-buttongroup .km-button:last-child {border-top-right-radius:18px; border-bottom-right-radius:18px; }
 
+    .profile-image {border-radius: 45px; height:45px; width:45px; }
+   
 /*media view home*/
-    .listview-item .profile-img {top:10px; left:2%; width:40px; height:40px; 
-        -webkit-border-radius:40px; 
-        -moz-border-radius:40px; 
-        -ms-border-radius:40px; 
-        -o-border-radius:40px; 
-        border-radius:40px; 
+
+    .listview-item .profile-img {top:10px; left:2%; width:45px; height:45px; 
+        -webkit-border-radius:45px; 
+        -moz-border-radius:45px; 
+        -ms-border-radius:45px; 
+        -o-border-radius:45px; 
+        border-radius:45px; 
     }
     .listview-item .box-top-right {top:10px; right:2%; }
     .listview-item .report-date {margin-bottom:10px; font-size:1em; }
@@ -576,10 +577,8 @@ a.button {display:block; text-decoration:none; }
     .listview-item .ad-category-info .category {z-index:2; position:absolute; right:2%; top:5px; }
     .listview-item .ad-category-info .category .km-button {line-height:35px; }
     .listview-item .ad-category-info .category .km-icon {font-size:2.7em; }
-
     
 /*end media view home*/
-
  
 /*media form view*/
 
@@ -684,27 +683,21 @@ a.button {display:block; text-decoration:none; }
     .km-nova .signup-view form .km-list input {transform:translateY(5%); position:relative; top:auto; left:auto; right:auto; width:100%; font-size:1em; }
     .km-nova .signin-view form .km-button,
     .km-nova .signup-view form .km-button {font-size:1em; }
-
-    
 }
 
-
-
-
 /*end MEDIA*/
-
-
-
-
 
 /*FONT ICONS*/
 
 @font-face {
-    font-family:'icomoon'; 
-    src:url('fonts/icomoon.eot?5irnf1'); 
-    src:url('fonts/icomoon.eot?5irnf1#iefix') format('embedded-opentype'), url('fonts/icomoon.ttf?5irnf1') format('truetype'), url('fonts/icomoon.woff?5irnf1') format('woff'), url('fonts/icomoon.svg?5irnf1#icomoon') format('svg'); 
-    font-weight:normal; 
-    font-style:normal; 
+    font-family: 'icomoon';
+    src:    url('fonts/icomoon.eot?jtzuo5');
+    src:    url('fonts/icomoon.eot?jtzuo5#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?jtzuo5') format('truetype'),
+        url('fonts/icomoon.woff?jtzuo5') format('woff'),
+        url('fonts/icomoon.svg?jtzuo5#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 [class^="km-icon-"], [class*=" km-icon-"] {
     /* use !important to prevent issues with browser extensions that change fonts */
@@ -732,6 +725,13 @@ a.button {display:block; text-decoration:none; }
     height:auto; 
     line-height:1em; 
     text-align:center; 
+}
+
+.km-icon-circle-gear:after {
+    content: "\e917";
+}
+.km-icon-circle-people:after {
+    content: "\e918";
 }
 .km-icon-follower:after {
     content:"\e916"; 
@@ -804,6 +804,7 @@ a.button {display:block; text-decoration:none; }
 }
 
 /*end FONT ICONS*/
+
 .spin-position{
     position: relative;
     top: 30%;
@@ -820,6 +821,7 @@ a.button {display:block; text-decoration:none; }
     opacity: 0.7;
     z-index: 3;
 }
+
 @-webkit-keyframes uil-default-anim {
     0% {
         opacity: 1
@@ -1018,11 +1020,15 @@ a.button {display:block; text-decoration:none; }
 }
 .profile-image {
     display: inline-block;
-    border-radius: 3px;
-    position: absolute;
+    border-radius: 75px;
+    height:75px; width:75px;
+    overflow:hidden;
+    border: 2px solid #ffffff;
+	position: absolute;
     top: 1%;
     left: 2%;
 }
+.profile-image img {display:block; max-width:100%; max-height:100%; height:auto; width:auto;}
 .styled-select select option{
    font-size: 1.2em;
    text-align: center;

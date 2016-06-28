@@ -164,7 +164,7 @@ app.home = kendo.observable({
             + '<div id=#=i# onclick="app.home.onSelect(this.id)"  class="listview-item item" >' 
             +	  '<img class="item-img" src='+img+'#=data[i].Images[0].Url#>' 
             +     '<div class="profile-image">' 
-            +         '# if (data[i].Owner.IdentityProvider == "Facebook") {  # <img style="border-radius: 50%;" src="https://graph.facebook.com/#=data[i].Owner.Picture#/picture?type=large" width="50"> # }else{  # <img src="images/temp/user_profile_img.png" width="50"> #}#' 
+            +         '# if (data[i].Owner.IdentityProvider == "Facebook") {  # <img src="https://graph.facebook.com/#=data[i].Owner.Picture#/picture?type=large" width="50"> # }else{  # <img src="images/temp/user_profile_img.png"> #}#' 
             +     '</div>' 
                 + '<div class="box-top-right">'
                 + 	'<div class="report-date">' 
